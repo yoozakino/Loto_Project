@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Soundtracks/MainMenuSoundtrack.mp3" type="AudioStream" id=1]
+[ext_resource path="res://Sounds/PressedButtonSound.mp3" type="AudioStream" id=2]
+[ext_resource path="res://MusicScene.gd" type="Script" id=3]
+
+[node name="MusicScene" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="MainSoundtrackPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+autoplay = true
+
+[node name="PressedButtonSound1Player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )

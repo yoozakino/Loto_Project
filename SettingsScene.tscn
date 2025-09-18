@@ -1,0 +1,116 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://CHAOS16.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://SettingsScene.gd" type="Script" id=3]
+[ext_resource path="res://Sounds/PressedButtonSound.mp3" type="AudioStream" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 60
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.501961, 0.501961, 0.501961, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.466667, 0.533333, 0.6, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 1, 0.980392, 0.980392, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="SettingsScene" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="SettingsLabel" type="Label" parent="."]
+margin_left = 400.0
+margin_top = 50.0
+margin_right = 640.0
+margin_bottom = 170.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Настройки"
+align = 1
+valign = 1
+
+[node name="BrightnessLabel" type="Label" parent="."]
+margin_left = 450.0
+margin_top = 180.0
+margin_right = 600.0
+margin_bottom = 230.0
+custom_colors/font_color = Color( 1, 0.980392, 0.980392, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Яркость"
+align = 1
+valign = 1
+
+[node name="ThemeLabel" type="Label" parent="."]
+margin_left = 450.0
+margin_top = 280.0
+margin_right = 600.0
+margin_bottom = 330.0
+custom_colors/font_color = Color( 1, 0.980392, 0.980392, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Громкость"
+align = 1
+valign = 1
+
+[node name="BrightnessSlider" type="HSlider" parent="."]
+margin_left = 341.0
+margin_top = 200.0
+margin_right = 522.0
+margin_bottom = 258.0
+rect_scale = Vector2( 2, 2 )
+value = 100.0
+rounded = true
+
+[node name="PressedButtonSound1Player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="BackButton" type="Button" parent="."]
+margin_left = 430.0
+margin_top = 470.0
+margin_right = 630.0
+margin_bottom = 540.0
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/normal = SubResource( 5 )
+text = "Назад"
+
+[node name="VolumeSlider" type="HSlider" parent="."]
+margin_left = 341.0
+margin_top = 330.0
+margin_right = 522.0
+margin_bottom = 388.0
+rect_scale = Vector2( 2, 2 )
+value = 100.0
+
+[connection signal="changed" from="BrightnessSlider" to="." method="_on_HSlider_changed"]
+[connection signal="value_changed" from="BrightnessSlider" to="." method="_on_HSlider_value_changed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_Button_pressed"]
+[connection signal="value_changed" from="VolumeSlider" to="." method="_on_VolumeSlider_value_changed"]
