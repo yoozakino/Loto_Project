@@ -88,10 +88,10 @@ font_data = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="PlayButton" type="Button" parent="."]
-margin_left = 420.0
-margin_top = 200.0
-margin_right = 620.0
-margin_bottom = 270.0
+margin_left = 570.0
+margin_top = 300.0
+margin_right = 770.0
+margin_bottom = 370.0
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
@@ -103,10 +103,10 @@ custom_styles/normal = SubResource( 5 )
 text = "Играть"
 
 [node name="SettingsButton" type="Button" parent="."]
-margin_left = 420.0
-margin_top = 350.0
-margin_right = 620.0
-margin_bottom = 420.0
+margin_left = 570.0
+margin_top = 450.0
+margin_right = 770.0
+margin_bottom = 520.0
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
@@ -118,10 +118,10 @@ custom_styles/normal = SubResource( 6 )
 text = "Настройки"
 
 [node name="ExitButton" type="Button" parent="."]
-margin_left = 420.0
-margin_top = 500.0
-margin_right = 620.0
-margin_bottom = 570.0
+margin_left = 570.0
+margin_top = 600.0
+margin_right = 770.0
+margin_bottom = 670.0
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
@@ -133,10 +133,11 @@ custom_styles/normal = SubResource( 7 )
 text = "Выйти"
 
 [node name="GameNameLabel" type="Label" parent="."]
-margin_left = 400.0
-margin_top = 50.0
-margin_right = 640.0
-margin_bottom = 171.0
+anchor_right = 0.11
+margin_left = 550.0
+margin_top = 110.0
+margin_right = 790.0
+margin_bottom = 231.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 4 )
 text = "Русское 

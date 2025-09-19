@@ -18,6 +18,12 @@ func _play_button_sound1():
 
 func _on_PlayButton_pressed():
 	_play_button_sound1()
+	next_action = "play"
+	
+	var music = get_node("/root/MusicScene/MainSoundtrackPlayer")
+	if music.playing:
+		music.stop()
+	get_node("ExitTimer").start()
 	
 func _on_SettingsButton_pressed():
 	_play_button_sound1()
@@ -35,5 +41,13 @@ func _on_ExitTimer_timeout():
 			get_tree().quit()
 		"settings":
 			get_tree().change_scene("res://SettingsScene.tscn")
+		"play":
+			var gamefields = [
+				"res://GameField1.tscn",
+				"res://GameField2.tscn",
+			]
+			var random_scene = randi() % gamefields.size()
+			var chosen_scene = gamefields[random_scene]
+			get_tree().change_scene(chosen_scene)
 	next_action = ""
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bg_part1.png-21104bb053b61dd28d798583c627bf5f.stex"
+path="res://.import/gamefield2.png-9f28a2559f981fd8fa7d82ef496c1c4f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/bg_part1.png"
-dest_files=[ "res://.import/bg_part1.png-21104bb053b61dd28d798583c627bf5f.stex" ]
+source_file="res://Assets/gamefield2.png"
+dest_files=[ "res://.import/gamefield2.png-9f28a2559f981fd8fa7d82ef496c1c4f.stex" ]
 
 [params]
 
