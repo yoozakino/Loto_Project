@@ -1,21 +1,21 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://CHAOS16.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://Crackhouse Cyr (sherbackoffalex).otf" type="DynamicFontData" id=1]
 [ext_resource path="res://SettingsScene.gd" type="Script" id=3]
 [ext_resource path="res://Sounds/PressedButtonSound.mp3" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 2 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 40
-font_data = ExtResource( 2 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 40
-font_data = ExtResource( 2 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.501961, 0.501961, 0.501961, 1 )

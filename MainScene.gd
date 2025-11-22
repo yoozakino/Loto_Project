@@ -45,6 +45,9 @@ func _on_ExitTimer_timeout():
 			var gamefields = [
 				"res://GameField1.tscn",
 				"res://GameField2.tscn",
+				"res://GameField3.tscn",
+				"res://GameField4.tscn",
+				"res://GameField5.tscn"
 			]
 			var random_scene = randi() % gamefields.size()
 			var chosen_scene = gamefields[random_scene]
