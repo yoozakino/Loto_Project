@@ -13,7 +13,7 @@ font_data = ExtResource( 3 )
 script = ExtResource( 4 )
 
 [node name="GameCard2" type="Sprite" parent="."]
-position = Vector2( 668, 630 )
+position = Vector2( 646, 393 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 1 )
 
@@ -26,6 +26,87 @@ margin_left = -2562.4
 margin_top = -1597.6
 margin_right = -2560.96
 margin_bottom = -1599.2
+columns = 9
+
+[node name="8" type="Label" parent="GameCard2/PlayerCard2"]
+margin_right = 340.0
+margin_bottom = 310.0
+rect_min_size = Vector2( 340, 310 )
+
+[node name="01" type="Label" parent="GameCard2/PlayerCard2"]
+margin_left = 344.0
+margin_right = 684.0
+margin_bottom = 310.0
+rect_min_size = Vector2( 340, 310 )
+
+[node name="02" type="Label" parent="GameCard2/PlayerCard2"]
+margin_left = 688.0
+margin_right = 1008.0
+margin_bottom = 310.0
+rect_min_size = Vector2( 320, 310 )
+
+[node name="31" type="Label" parent="GameCard2/PlayerCard2"]
+margin_left = 1012.0
+margin_right = 1342.0
+margin_bottom = 310.0
+rect_min_size = Vector2( 330, 310 )
+
+[node name="03" type="Label" parent="GameCard2/PlayerCard2"]
+margin_left = 1346.0
+margin_right = 1676.0
+margin_bottom = 310.0
+rect_min_size = Vector2( 330, 310 )
+
+[node name="51" type="Label" parent="GameCard2/PlayerCard2"]
+margin_left = 1680.0
+margin_right = 2010.0
+margin_bottom = 310.0
+rect_min_size = Vector2( 330, 310 )
+
+[node name="04" type="Label" parent="GameCard2/PlayerCard2"]
+margin_left = 2014.0
+margin_right = 2344.0
+margin_bottom = 310.0
+rect_min_size = Vector2( 330, 310 )
+
+[node name="71" type="Label" parent="GameCard2/PlayerCard2"]
+margin_left = 2348.0
+margin_right = 2678.0
+margin_bottom = 310.0
+rect_min_size = Vector2( 330, 310 )
+
+[node name="83" type="Label" parent="GameCard2/PlayerCard2"]
+margin_left = 2682.0
+margin_right = 3002.0
+margin_bottom = 310.0
+rect_min_size = Vector2( 320, 310 )
+
+[node name="05" type="Label" parent="GameCard2/PlayerCard2"]
+margin_top = 314.0
+margin_right = 340.0
+margin_bottom = 644.0
+rect_min_size = Vector2( 330, 330 )
+
+[node name="06" type="Label" parent="GameCard2/PlayerCard2"]
+margin_left = 344.0
+margin_top = 314.0
+margin_right = 684.0
+margin_bottom = 644.0
+rect_min_size = Vector2( 320, 330 )
+
+[node name="07" type="Label" parent="GameCard2/PlayerCard2"]
+margin_left = 688.0
+margin_top = 316.0
+margin_right = 1008.0
+margin_bottom = 641.0
+rect_min_size = Vector2( 315, 325 )
+
+[node name="32" type="Label" parent="GameCard2/PlayerCard2"]
+margin_left = 1012.0
+margin_top = 316.0
+margin_right = 1342.0
+margin_bottom = 641.0
+rect_min_size = Vector2( 315, 325 )
 
 [node name="BotCard2" type="GridContainer" parent="GameCard2"]
 anchor_left = 0.015
