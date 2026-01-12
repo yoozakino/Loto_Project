@@ -35,10 +35,9 @@ func _on_VolumeSlider_value_changed(value):
 	
 	Settings.volume = volume
 	
-	# глобальная музыка
 	get_node("/root/MusicScene/MainSoundtrackPlayer").volume_db = linear2db(volume)
-	# глобальный звук кнопки
 	get_node("/root/MusicScene/PressedButtonSound1Player").volume_db = linear2db(volume)
+	#get_node("/root/GameField1/GameSoundtrackPlayer").volume_db = linear2db(volume)
 	
 func _on_BackButton_pressed():
 	_play_button_sound1()
