@@ -77,7 +77,7 @@ rect_min_size = Vector2( 330, 310 )
 
 [node name="83" type="Label" parent="GameCard2/PlayerCard2"]
 margin_left = 2682.0
-margin_right = 3002.0
+margin_right = 3012.0
 margin_bottom = 310.0
 rect_min_size = Vector2( 320, 310 )
 
@@ -108,6 +108,103 @@ margin_right = 1342.0
 margin_bottom = 641.0
 rect_min_size = Vector2( 315, 325 )
 
+[node name="41" type="Label" parent="GameCard2/PlayerCard2"]
+margin_left = 1346.0
+margin_top = 316.0
+margin_right = 1676.0
+margin_bottom = 641.0
+rect_min_size = Vector2( 300, 325 )
+
+[node name="08" type="Label" parent="GameCard2/PlayerCard2"]
+margin_left = 1680.0
+margin_top = 316.0
+margin_right = 2010.0
+margin_bottom = 641.0
+rect_min_size = Vector2( 330, 325 )
+
+[node name="67" type="Label" parent="GameCard2/PlayerCard2"]
+margin_left = 2014.0
+margin_top = 316.0
+margin_right = 2344.0
+margin_bottom = 641.0
+rect_min_size = Vector2( 330, 325 )
+
+[node name="76" type="Label" parent="GameCard2/PlayerCard2"]
+margin_left = 2348.0
+margin_top = 316.0
+margin_right = 2678.0
+margin_bottom = 641.0
+rect_min_size = Vector2( 330, 325 )
+
+[node name="84" type="Label" parent="GameCard2/PlayerCard2"]
+margin_left = 2682.0
+margin_top = 316.0
+margin_right = 3012.0
+margin_bottom = 641.0
+rect_min_size = Vector2( 330, 325 )
+
+[node name="9" type="Label" parent="GameCard2/PlayerCard2"]
+margin_top = 648.0
+margin_right = 340.0
+margin_bottom = 973.0
+rect_min_size = Vector2( 330, 325 )
+
+[node name="10" type="Label" parent="GameCard2/PlayerCard2"]
+margin_left = 344.0
+margin_top = 648.0
+margin_right = 684.0
+margin_bottom = 973.0
+rect_min_size = Vector2( 330, 325 )
+
+[node name="09" type="Label" parent="GameCard2/PlayerCard2"]
+margin_left = 688.0
+margin_top = 648.0
+margin_right = 1008.0
+margin_bottom = 973.0
+rect_min_size = Vector2( 320, 325 )
+
+[node name="39" type="Label" parent="GameCard2/PlayerCard2"]
+margin_left = 1012.0
+margin_top = 648.0
+margin_right = 1342.0
+margin_bottom = 973.0
+rect_min_size = Vector2( 330, 325 )
+
+[node name="010" type="Label" parent="GameCard2/PlayerCard2"]
+margin_left = 1346.0
+margin_top = 648.0
+margin_right = 1676.0
+margin_bottom = 973.0
+rect_min_size = Vector2( 330, 325 )
+
+[node name="58" type="Label" parent="GameCard2/PlayerCard2"]
+margin_left = 1680.0
+margin_top = 648.0
+margin_right = 2010.0
+margin_bottom = 973.0
+rect_min_size = Vector2( 330, 325 )
+
+[node name="011" type="Label" parent="GameCard2/PlayerCard2"]
+margin_left = 2014.0
+margin_top = 648.0
+margin_right = 2344.0
+margin_bottom = 973.0
+rect_min_size = Vector2( 330, 325 )
+
+[node name="012" type="Label" parent="GameCard2/PlayerCard2"]
+margin_left = 2348.0
+margin_top = 648.0
+margin_right = 2678.0
+margin_bottom = 973.0
+rect_min_size = Vector2( 330, 325 )
+
+[node name="85" type="Label" parent="GameCard2/PlayerCard2"]
+margin_left = 2682.0
+margin_top = 648.0
+margin_right = 3012.0
+margin_bottom = 973.0
+rect_min_size = Vector2( 330, 325 )
+
 [node name="BotCard2" type="GridContainer" parent="GameCard2"]
 anchor_left = 0.015
 anchor_top = 0.667
@@ -117,6 +214,184 @@ margin_left = -2560.8
 margin_top = -1598.4
 margin_right = -2557.6
 margin_bottom = -1598.4
+columns = 9
+
+[node name="4" type="Label" parent="GameCard2/BotCard2"]
+margin_right = 340.0
+margin_bottom = 315.0
+rect_min_size = Vector2( 340, 315 )
+
+[node name="01" type="Label" parent="GameCard2/BotCard2"]
+margin_left = 344.0
+margin_right = 674.0
+margin_bottom = 315.0
+rect_min_size = Vector2( 330, 315 )
+
+[node name="21" type="Label" parent="GameCard2/BotCard2"]
+margin_left = 678.0
+margin_right = 1013.0
+margin_bottom = 315.0
+rect_min_size = Vector2( 335, 315 )
+
+[node name="31" type="Label" parent="GameCard2/BotCard2"]
+margin_left = 1017.0
+margin_right = 1347.0
+margin_bottom = 315.0
+rect_min_size = Vector2( 330, 315 )
+
+[node name="02" type="Label" parent="GameCard2/BotCard2"]
+margin_left = 1351.0
+margin_right = 1681.0
+margin_bottom = 315.0
+rect_min_size = Vector2( 330, 315 )
+
+[node name="55" type="Label" parent="GameCard2/BotCard2"]
+margin_left = 1685.0
+margin_right = 2025.0
+margin_bottom = 315.0
+rect_min_size = Vector2( 340, 315 )
+
+[node name="66" type="Label" parent="GameCard2/BotCard2"]
+margin_left = 2029.0
+margin_right = 2364.0
+margin_bottom = 315.0
+rect_min_size = Vector2( 335, 315 )
+
+[node name="03" type="Label" parent="GameCard2/BotCard2"]
+margin_left = 2368.0
+margin_right = 2698.0
+margin_bottom = 315.0
+rect_min_size = Vector2( 330, 315 )
+
+[node name="04" type="Label" parent="GameCard2/BotCard2"]
+margin_left = 2702.0
+margin_right = 3032.0
+margin_bottom = 315.0
+rect_min_size = Vector2( 330, 315 )
+
+[node name="7" type="Label" parent="GameCard2/BotCard2"]
+margin_top = 319.0
+margin_right = 340.0
+margin_bottom = 644.0
+rect_min_size = Vector2( 330, 325 )
+
+[node name="10" type="Label" parent="GameCard2/BotCard2"]
+margin_left = 344.0
+margin_top = 319.0
+margin_right = 674.0
+margin_bottom = 644.0
+rect_min_size = Vector2( 330, 325 )
+
+[node name="05" type="Label" parent="GameCard2/BotCard2"]
+margin_left = 678.0
+margin_top = 319.0
+margin_right = 1013.0
+margin_bottom = 644.0
+rect_min_size = Vector2( 330, 325 )
+
+[node name="06" type="Label" parent="GameCard2/BotCard2"]
+margin_left = 1017.0
+margin_top = 319.0
+margin_right = 1347.0
+margin_bottom = 644.0
+rect_min_size = Vector2( 330, 325 )
+
+[node name="49" type="Label" parent="GameCard2/BotCard2"]
+margin_left = 1351.0
+margin_top = 319.0
+margin_right = 1681.0
+margin_bottom = 644.0
+rect_min_size = Vector2( 330, 325 )
+
+[node name="57" type="Label" parent="GameCard2/BotCard2"]
+margin_left = 1685.0
+margin_top = 319.0
+margin_right = 2025.0
+margin_bottom = 644.0
+rect_min_size = Vector2( 330, 325 )
+
+[node name="68" type="Label" parent="GameCard2/BotCard2"]
+margin_left = 2029.0
+margin_top = 319.0
+margin_right = 2364.0
+margin_bottom = 644.0
+rect_min_size = Vector2( 330, 325 )
+
+[node name="07" type="Label" parent="GameCard2/BotCard2"]
+margin_left = 2368.0
+margin_top = 319.0
+margin_right = 2698.0
+margin_bottom = 644.0
+rect_min_size = Vector2( 330, 325 )
+
+[node name="08" type="Label" parent="GameCard2/BotCard2"]
+margin_left = 2702.0
+margin_top = 319.0
+margin_right = 3032.0
+margin_bottom = 644.0
+rect_min_size = Vector2( 330, 325 )
+
+[node name="8" type="Label" parent="GameCard2/BotCard2"]
+margin_top = 648.0
+margin_right = 340.0
+margin_bottom = 973.0
+rect_min_size = Vector2( 330, 325 )
+
+[node name="09" type="Label" parent="GameCard2/BotCard2"]
+margin_left = 344.0
+margin_top = 648.0
+margin_right = 674.0
+margin_bottom = 973.0
+rect_min_size = Vector2( 330, 325 )
+
+[node name="010" type="Label" parent="GameCard2/BotCard2"]
+margin_left = 678.0
+margin_top = 648.0
+margin_right = 1013.0
+margin_bottom = 973.0
+rect_min_size = Vector2( 330, 325 )
+
+[node name="011" type="Label" parent="GameCard2/BotCard2"]
+margin_left = 1017.0
+margin_top = 648.0
+margin_right = 1347.0
+margin_bottom = 973.0
+rect_min_size = Vector2( 330, 325 )
+
+[node name="012" type="Label" parent="GameCard2/BotCard2"]
+margin_left = 1351.0
+margin_top = 648.0
+margin_right = 1681.0
+margin_bottom = 973.0
+rect_min_size = Vector2( 330, 325 )
+
+[node name="59" type="Label" parent="GameCard2/BotCard2"]
+margin_left = 1685.0
+margin_top = 648.0
+margin_right = 2025.0
+margin_bottom = 973.0
+rect_min_size = Vector2( 330, 325 )
+
+[node name="69" type="Label" parent="GameCard2/BotCard2"]
+margin_left = 2029.0
+margin_top = 648.0
+margin_right = 2364.0
+margin_bottom = 973.0
+rect_min_size = Vector2( 330, 325 )
+
+[node name="76" type="Label" parent="GameCard2/BotCard2"]
+margin_left = 2368.0
+margin_top = 648.0
+margin_right = 2698.0
+margin_bottom = 973.0
+rect_min_size = Vector2( 330, 325 )
+
+[node name="82" type="Label" parent="GameCard2/BotCard2"]
+margin_left = 2702.0
+margin_top = 648.0
+margin_right = 3032.0
+margin_bottom = 973.0
+rect_min_size = Vector2( 330, 325 )
 
 [node name="GameSoundtrackPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
