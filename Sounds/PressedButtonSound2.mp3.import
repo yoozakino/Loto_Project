@@ -11,5 +11,5 @@ dest_files=[ "res://.import/PressedButtonSound2.mp3-1ccdeb236044793b89e02aaeeb44
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
