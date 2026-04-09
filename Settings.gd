@@ -6,21 +6,46 @@ var brightness = 1.0
 var volume = 1.0
 
 
+func _logger():
+	return get_node_or_null("/root/GameLogger")
+
+
+func _log_info(message):
+	var logger = _logger()
+	if logger != null:
+		logger.log_info(message)
+
+
+func _log_warning(message):
+	var logger = _logger()
+	if logger != null:
+		logger.log_warning(message)
+
+
+func _log_error(message):
+	var logger = _logger()
+	if logger != null:
+		logger.log_error(message)
+
+
 func _ready():
 	load_settings()
 	call_deferred("apply_all")
+	_log_info("Settings singleton initialized")
 
 
 func set_brightness_value(value):
 	brightness = clamp(value, 0.2, 1.0)
 	apply_brightness()
 	save_settings()
+	_log_info("Brightness updated to %.2f" % brightness)
 
 
 func set_volume_value(value):
 	volume = clamp(value, 0.0, 1.0)
 	apply_volume()
 	save_settings()
+	_log_info("Volume updated to %.2f" % volume)
 
 
 func apply_all():
@@ -30,19 +55,24 @@ func apply_all():
 
 func apply_brightness():
 	if get_tree() == null:
+		_log_warning("apply_brightness skipped: tree is null")
 		return
 
 	var root = get_tree().root
 	if root != null and root.has_node("GameBrightness"):
 		root.get_node("GameBrightness").color = Color(brightness, brightness, brightness)
+	else:
+		_log_warning("GameBrightness node not found while applying brightness")
 
 
 func apply_volume():
 	if get_tree() == null:
+		_log_warning("apply_volume skipped: tree is null")
 		return
 
 	var root = get_tree().root
 	if root == null:
+		_log_warning("apply_volume skipped: root is null")
 		return
 
 	if root.has_node("MusicScene/MainSoundtrackPlayer"):
@@ -58,13 +88,18 @@ func save_settings():
 	var config = ConfigFile.new()
 	config.set_value("audio", "volume", volume)
 	config.set_value("display", "brightness", brightness)
-	config.save(SETTINGS_PATH)
+	var result = config.save(SETTINGS_PATH)
+	if result == OK:
+		_log_info("Settings saved to %s" % SETTINGS_PATH)
+	else:
+		_log_error("Failed to save settings to %s, code=%s" % [SETTINGS_PATH, str(result)])
 
 
 func load_settings():
 	var config = ConfigFile.new()
 	var result = config.load(SETTINGS_PATH)
 	if result != OK:
+		_log_warning("Settings file not loaded, defaults will be used")
 		return
 
 	volume = float(config.get_value("audio", "volume", 1.0))
@@ -72,6 +107,7 @@ func load_settings():
 
 	volume = clamp(volume, 0.0, 1.0)
 	brightness = clamp(brightness, 0.2, 1.0)
+	_log_info("Settings loaded: volume=%.2f brightness=%.2f" % [volume, brightness])
 
 
 func _volume_to_db(value):
