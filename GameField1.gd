@@ -562,7 +562,7 @@ func _restart_game():
 
 
 func _create_ui_font():
-	var font_data = load("res://PFAgoraSlabPro Bold.ttf")
+	var font_data = load("res://Montserrat-SemiBold.ttf")
 	if font_data == null:
 		_log_warning("UI font could not be loaded")
 		return
@@ -604,4 +604,3 @@ func _play_player_click_sound():
 	if player_click_sound.playing:
 		player_click_sound.stop()
 	player_click_sound.play()
-
