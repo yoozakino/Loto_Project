@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Montserrat-SemiBold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://MainScene.gd" type="Script" id=2]
@@ -23,56 +23,6 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id=5]
-bg_color = Color( 1, 0.980392, 0.980392, 1 )
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="DynamicFont" id=2]
-size = 36
-font_data = ExtResource( 1 )
-
-[sub_resource type="StyleBoxFlat" id=9]
-bg_color = Color( 0.501961, 0.501961, 0.501961, 1 )
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxFlat" id=12]
-bg_color = Color( 0.466667, 0.533333, 0.6, 1 )
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxFlat" id=6]
-bg_color = Color( 1, 0.980392, 0.980392, 1 )
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="DynamicFont" id=3]
-size = 36
-font_data = ExtResource( 1 )
-
-[sub_resource type="StyleBoxFlat" id=10]
-bg_color = Color( 0.501961, 0.501961, 0.501961, 1 )
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxFlat" id=13]
-bg_color = Color( 0.466667, 0.533333, 0.6, 1 )
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 1, 0.980392, 0.980392, 1 )
 corner_radius_top_left = 10
 corner_radius_top_right = 10
@@ -149,10 +99,6 @@ custom_styles/normal = SubResource( 5 )
 text = "Выйти"
 
 [node name="GameNameLabel" type="Label" parent="."]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 500.0
 margin_top = 110.0
 margin_right = 840.0
