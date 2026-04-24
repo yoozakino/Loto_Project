@@ -41,6 +41,7 @@ func _ready():
 	add_child(exit_timer)
 	exit_timer.connect("timeout", self, "_on_ExitTimer_timeout")
 	_log_info("Settings scene initialized")
+	_normalize_settings_layout()
 	_cache_base_layout()
 	_apply_responsive_layout()
 	if not get_viewport().is_connected("size_changed", self, "_on_viewport_size_changed"):
@@ -53,16 +54,12 @@ func _play_button_sound1():
 	btn.play()
 
 func _on_HSlider_value_changed(value):
-	_play_button_sound1()
-	
 	var brightness = lerp(0.2, 1.0, value / $BrightnessSlider.max_value)
 	
 	Settings.set_brightness_value(brightness)
 	_log_game_event("Settings", "Brightness slider changed to %.2f" % brightness)
 	
 func _on_VolumeSlider_value_changed(value):
-	_play_button_sound1()
-	
 	var volume = value / $VolumeSlider.max_value
 	
 	Settings.set_volume_value(volume)
@@ -106,6 +103,27 @@ func _cache_base_layout():
 		)
 
 	_layout_initialized = true
+
+
+func _normalize_settings_layout():
+	_set_rect($SettingsLabel, Rect2(500, 50, 340, 120))
+	_set_rect($BrightnessLabel, Rect2(560, 200, 220, 50))
+	_set_rect($VolumeLabel, Rect2(560, 350, 220, 50))
+	_set_rect($BrightnessSlider, Rect2(489, 250, 181, 58))
+	_set_rect($VolumeSlider, Rect2(489, 400, 181, 58))
+	_set_rect($BackButton, Rect2(550, 550, 240, 70))
+	_set_rect($ResetButton, Rect2(550, 640, 240, 70))
+
+
+func _set_rect(control, rect):
+	control.anchor_left = 0.0
+	control.anchor_top = 0.0
+	control.anchor_right = 0.0
+	control.anchor_bottom = 0.0
+	control.margin_left = rect.position.x
+	control.margin_top = rect.position.y
+	control.margin_right = rect.position.x + rect.size.x
+	control.margin_bottom = rect.position.y + rect.size.y
 
 
 func _apply_responsive_layout():
