@@ -26,9 +26,6 @@ GameBrightness="*res://GameBrightness.tscn"
 
 window/size/width=1280
 window/size/height=800
-window/size/fullscreen=false
-window/size/borderless=false
-window/size/resizable=true
 window/handheld/orientation="sensor_landscape"
 window/stretch/mode="2d"
 window/stretch/aspect="expand"
@@ -39,7 +36,6 @@ common/drop_mouse_on_gui_input_disabled=true
 
 [input_devices]
 
-pointing/emulate_mouse_from_touch=true
 pointing/emulate_touch_from_mouse=true
 
 [physics]
