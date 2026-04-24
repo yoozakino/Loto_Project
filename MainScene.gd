@@ -34,7 +34,16 @@ func _log_game_event(event_name, details = ""):
 	if logger != null:
 		logger.log_game_event(event_name, details)
 
+
+func _configure_desktop_window():
+	if OS.has_feature("Android"):
+		return
+
+	Settings.apply_window_mode()
+
+
 func _ready():
+	_configure_desktop_window()
 	_log_scene("MainScene loaded")
 	var exit_timer = Timer.new()
 	exit_timer.name = "ExitTimer"
@@ -207,13 +216,20 @@ func _apply_responsive_layout():
 
 
 func _get_effective_screen_size():
-	var viewport_size = get_viewport_rect().size
-	var window_size = OS.window_size
+	var raw_size = get_viewport_rect().size
 
-	if window_size.x > 0 and window_size.y > 0:
-		return Vector2(max(viewport_size.x, window_size.x), max(viewport_size.y, window_size.y))
+	if raw_size.x <= 0 or raw_size.y <= 0:
+		raw_size = OS.window_size
+	if raw_size.x <= 0 or raw_size.y <= 0:
+		return BASE_VIEWPORT_SIZE
 
-	return viewport_size
+	var screen_aspect = raw_size.x / raw_size.y
+	var base_aspect = BASE_VIEWPORT_SIZE.x / BASE_VIEWPORT_SIZE.y
+
+	if screen_aspect >= base_aspect:
+		return Vector2(BASE_VIEWPORT_SIZE.y * screen_aspect, BASE_VIEWPORT_SIZE.y)
+
+	return Vector2(BASE_VIEWPORT_SIZE.x, BASE_VIEWPORT_SIZE.x / screen_aspect)
 
 
 func _create_rules_popup():

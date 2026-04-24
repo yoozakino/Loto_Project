@@ -1,6 +1,8 @@
 extends Node2D
 
 const BASE_VIEWPORT_SIZE = Vector2(1280, 800)
+const WINDOW_MODE_MAXIMIZED = 0
+const WINDOW_MODE_FULLSCREEN = 1
 
 var next_action = ""
 var _layout_initialized = false
@@ -33,6 +35,7 @@ func _ready():
 	$BrightnessSlider.value = Settings.brightness * $BrightnessSlider.max_value
 	$VolumeSlider.value = Settings.volume * $VolumeSlider.max_value
 	Settings.apply_all()
+	_setup_window_mode_options()
 	
 	var exit_timer = Timer.new()
 	exit_timer.name = "ExitTimer"
@@ -75,9 +78,19 @@ func _on_ResetButton_pressed():
 	_play_button_sound1()
 	Settings.set_brightness_value(1.0)
 	Settings.set_volume_value(1.0)
+	Settings.set_fullscreen_enabled(false)
 	$BrightnessSlider.value = Settings.brightness * $BrightnessSlider.max_value
 	$VolumeSlider.value = Settings.volume * $VolumeSlider.max_value
+	_update_window_mode_option()
 	_log_game_event("Settings", "Settings reset to defaults")
+
+
+func _on_WindowModeOption_item_selected(index):
+	_play_button_sound1()
+	Settings.set_fullscreen_enabled($WindowModeOption.get_item_id(index) == WINDOW_MODE_FULLSCREEN)
+	_update_window_mode_option()
+	_apply_responsive_layout()
+	_log_game_event("Settings", "Window mode changed")
 	
 func _on_ExitTimer_timeout():
 	match next_action:
@@ -95,7 +108,7 @@ func _cache_base_layout():
 	if _layout_initialized:
 		return
 
-	for node_name in ["SettingsLabel", "BrightnessLabel", "VolumeLabel", "BrightnessSlider", "VolumeSlider", "BackButton", "ResetButton"]:
+	for node_name in ["SettingsLabel", "BrightnessLabel", "VolumeLabel", "BrightnessSlider", "VolumeSlider", "WindowModeLabel", "WindowModeOption", "BackButton", "ResetButton"]:
 		var control = get_node(node_name)
 		_base_control_layouts[node_name] = Rect2(
 			Vector2(control.margin_left, control.margin_top),
@@ -106,13 +119,38 @@ func _cache_base_layout():
 
 
 func _normalize_settings_layout():
-	_set_rect($SettingsLabel, Rect2(500, 50, 340, 120))
-	_set_rect($BrightnessLabel, Rect2(560, 200, 220, 50))
-	_set_rect($VolumeLabel, Rect2(560, 350, 220, 50))
-	_set_rect($BrightnessSlider, Rect2(489, 250, 181, 58))
-	_set_rect($VolumeSlider, Rect2(489, 400, 181, 58))
-	_set_rect($BackButton, Rect2(550, 550, 240, 70))
-	_set_rect($ResetButton, Rect2(550, 640, 240, 70))
+	_set_rect($SettingsLabel, Rect2(500, 45, 340, 115))
+	_set_rect($BrightnessLabel, Rect2(560, 175, 220, 45))
+	_set_rect($BrightnessSlider, Rect2(489, 225, 181, 58))
+	_set_rect($VolumeLabel, Rect2(560, 315, 220, 45))
+	_set_rect($VolumeSlider, Rect2(489, 365, 181, 58))
+	_set_rect($WindowModeLabel, Rect2(455, 455, 430, 42))
+	_set_rect($WindowModeOption, Rect2(490, 535, 360, 62))
+	_set_rect($BackButton, Rect2(550, 620, 240, 70))
+	_set_rect($ResetButton, Rect2(550, 705, 240, 70))
+
+
+func _setup_window_mode_options():
+	$WindowModeOption.clear()
+	$WindowModeOption.add_item("Развернутое окно", WINDOW_MODE_MAXIMIZED)
+	$WindowModeOption.add_item("Полный экран", WINDOW_MODE_FULLSCREEN)
+
+	var popup_font = $WindowModeOption.get("custom_fonts/font")
+	if popup_font != null:
+		$WindowModeOption.get_popup().add_font_override("font", popup_font)
+
+	_update_window_mode_option()
+
+
+func _update_window_mode_option():
+	var mode_id = WINDOW_MODE_MAXIMIZED
+	if Settings.fullscreen_enabled:
+		mode_id = WINDOW_MODE_FULLSCREEN
+
+	for index in range($WindowModeOption.get_item_count()):
+		if $WindowModeOption.get_item_id(index) == mode_id:
+			$WindowModeOption.select(index)
+			return
 
 
 func _set_rect(control, rect):
@@ -146,10 +184,17 @@ func _apply_responsive_layout():
 
 
 func _get_effective_screen_size():
-	var viewport_size = get_viewport_rect().size
-	var window_size = OS.window_size
+	var raw_size = get_viewport_rect().size
 
-	if window_size.x > 0 and window_size.y > 0:
-		return Vector2(max(viewport_size.x, window_size.x), max(viewport_size.y, window_size.y))
+	if raw_size.x <= 0 or raw_size.y <= 0:
+		raw_size = OS.window_size
+	if raw_size.x <= 0 or raw_size.y <= 0:
+		return BASE_VIEWPORT_SIZE
 
-	return viewport_size
+	var screen_aspect = raw_size.x / raw_size.y
+	var base_aspect = BASE_VIEWPORT_SIZE.x / BASE_VIEWPORT_SIZE.y
+
+	if screen_aspect >= base_aspect:
+		return Vector2(BASE_VIEWPORT_SIZE.y * screen_aspect, BASE_VIEWPORT_SIZE.y)
+
+	return Vector2(BASE_VIEWPORT_SIZE.x, BASE_VIEWPORT_SIZE.x / screen_aspect)

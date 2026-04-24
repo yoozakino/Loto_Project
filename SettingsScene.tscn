@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Montserrat-SemiBold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://SettingsScene.gd" type="Script" id=3]
@@ -18,6 +18,16 @@ font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 34
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 30
+outline_size = 3
+outline_color = Color( 1, 1, 1, 0.95 )
 font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=4]
@@ -46,9 +56,9 @@ script = ExtResource( 3 )
 
 [node name="SettingsLabel" type="Label" parent="."]
 margin_left = 500.0
-margin_top = 50.0
+margin_top = 45.0
 margin_right = 840.0
-margin_bottom = 170.0
+margin_bottom = 160.0
 custom_colors/font_color = Color( 0.458824, 0.0901961, 0.117647, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "Настройки"
@@ -57,9 +67,9 @@ valign = 1
 
 [node name="BrightnessLabel" type="Label" parent="."]
 margin_left = 560.0
-margin_top = 200.0
+margin_top = 175.0
 margin_right = 780.0
-margin_bottom = 250.0
+margin_bottom = 220.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "Яркость"
@@ -68,9 +78,9 @@ valign = 1
 
 [node name="VolumeLabel" type="Label" parent="."]
 margin_left = 560.0
-margin_top = 350.0
+margin_top = 315.0
 margin_right = 780.0
-margin_bottom = 400.0
+margin_bottom = 360.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "Громкость"
@@ -79,9 +89,9 @@ valign = 1
 
 [node name="BrightnessSlider" type="HSlider" parent="."]
 margin_left = 489.0
-margin_top = 250.0
+margin_top = 225.0
 margin_right = 670.0
-margin_bottom = 308.0
+margin_bottom = 283.0
 rect_scale = Vector2( 2, 2 )
 value = 100.0
 rounded = true
@@ -91,9 +101,9 @@ stream = ExtResource( 4 )
 
 [node name="BackButton" type="Button" parent="."]
 margin_left = 550.0
-margin_top = 550.0
+margin_top = 620.0
 margin_right = 790.0
-margin_bottom = 620.0
+margin_bottom = 690.0
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
@@ -106,17 +116,43 @@ text = "Назад"
 
 [node name="VolumeSlider" type="HSlider" parent="."]
 margin_left = 489.0
-margin_top = 400.0
+margin_top = 365.0
 margin_right = 670.0
-margin_bottom = 458.0
+margin_bottom = 423.0
 rect_scale = Vector2( 2, 2 )
 value = 100.0
 
+[node name="WindowModeLabel" type="Label" parent="."]
+margin_left = 455.0
+margin_top = 455.0
+margin_right = 885.0
+margin_bottom = 497.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 8 )
+text = "Режим отображения"
+align = 1
+valign = 1
+
+[node name="WindowModeOption" type="OptionButton" parent="."]
+margin_left = 490.0
+margin_top = 535.0
+margin_right = 850.0
+margin_bottom = 597.0
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 7 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/normal = SubResource( 5 )
+align = 1
+
 [node name="ResetButton" type="Button" parent="."]
 margin_left = 550.0
-margin_top = 640.0
+margin_top = 705.0
 margin_right = 790.0
-margin_bottom = 710.0
+margin_bottom = 775.0
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
@@ -132,3 +168,4 @@ text = "Сброс"
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
 [connection signal="pressed" from="ResetButton" to="." method="_on_ResetButton_pressed"]
 [connection signal="value_changed" from="VolumeSlider" to="." method="_on_VolumeSlider_value_changed"]
+[connection signal="item_selected" from="WindowModeOption" to="." method="_on_WindowModeOption_item_selected"]
